@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet id="create_table_link" author="borisov-tyu">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="link"/>
+            </not>
+        </preConditions>
+        <createTable tableName="link">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="link_pkey"/>
+            </column>
+            <column name="caid" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="acc_depo" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="client_dia_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint
+                baseTableName="link"
+                baseColumnNames="caid"
+                referencedTableName="corp_actions"
+                referencedColumnNames="caid"
+                constraintName="fk_link_corp_actions"/>
+        <addForeignKeyConstraint
+                baseTableName="link"
+                baseColumnNames="acc_depo"
+                referencedTableName="client_acc"
+                referencedColumnNames="acc_depo"
+                constraintName="fk_link_client_acc"/>
+        <addForeignKeyConstraint
+                baseTableName="link"
+                baseColumnNames="client_dia_id"
+                referencedTableName="result"
+                referencedColumnNames="client_dia_id"
+                constraintName="fk_link_result"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,39 @@
+spring:
+#  quartz:
+#    job-store-type: jdbc
+#    jdbc:
+#      initialize-schema: never
+#    properties:
+#      org.quartz.scheduler.instanceName: CorpActionScheduler
+#      org.quartz.scheduler.instanceId: AUTO
+#      # Настройка пула потоков (обязательно!)
+#      org.quartz.threadPool.class: org.quartz.simpl.SimpleThreadPool
+#      org.quartz.threadPool.threadCount: 5
+#
+#      # Настройка хранилища заданий
+#      org.quartz.jobStore.class: org.quartz.impl.jdbcjobstore.JobStoreTX
+#      org.quartz.jobStore.driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+#      org.quartz.jobStore.useProperties: false
+#      org.quartz.jobStore.dataSource: quartzDataSource  # имя вашего DS
+#
+#      # Настройка источника данных
+#      org.quartz.dataSource.quartzDataSource.driver: org.postgresql.Driver
+#      org.quartz.dataSource.quartzDataSource.URL: ${spring.datasource.url}
+#      org.quartz.dataSource.quartzDataSource.user: ${spring.datasource.username}
+#      org.quartz.dataSource.quartzDataSource.password: ${spring.datasource.password}
+#      org.quartz.dataSource.quartzDataSource.maxConnections: 5
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: "corp_action"
+    password: "corp_action"
+    url: "jdbc:postgresql://localhost:5433/corp_action"
+  liquibase:
+    change-log: classpath:/db_changelog/release-1.0.0/cumulative.xml
+
+kafka:
+  corp-action:
+    bootstrapServers: "localhost:9092"
+    consumer:
+      topic: "topic2"
+      group-id: "corp-action"
+      concurrency: 3

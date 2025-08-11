@@ -1,0 +1,159 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "CorporateActionNotification": {
+      "type": "object",
+      "properties": {
+        "CorporateActionIssuerID": {
+          "type": "string"
+        },
+        "CorporateActionType": {
+          "type": "string"
+        },
+        "CorpActnEvtId": {
+          "type": "string"
+        },
+        "EvtTp": {
+          "type": "string"
+        },
+        "MndtryVlntryEvtTp": {
+          "type": "string"
+        },
+        "RcrdDt": {
+          "type": "string"
+        },
+        "OrgNm": {
+          "type": "string"
+        },
+        "SfkpgAcct": {
+          "type": "string"
+        },
+        "FinInstrmId": {
+          "type": "object",
+          "properties": {
+            "ISIN": {
+              "type": "string"
+            },
+            "RegNumber": {
+              "type": "string"
+            },
+            "NSDR": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ISIN",
+            "RegNumber",
+            "NSDR"
+          ]
+        },
+        "AddtlInf": {
+          "type": "string"
+        },
+        "LwsInPlcCd": {
+          "type": "string"
+        },
+        "SbrdntLwsInPlcCd": {
+          "type": "string"
+        },
+        "CorpActnOptnDtls": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "OptnNb": {
+                "type": "string"
+              },
+              "OptnTp": {
+                "type": "string"
+              },
+              "DfltOptnInd": {
+                "type": "string"
+              },
+              "PricVal": {
+                "type": "string"
+              },
+              "PricValCcy": {
+                "type": "string"
+              },
+              "ActnPrd": {
+                "type": "object",
+                "properties": {
+                  "StartDt": {
+                    "type": "string"
+                  },
+                  "EndDt": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "StartDt",
+                  "EndDt"
+                ]
+              }
+            },
+            "required": [
+              "OptnNb",
+              "OptnTp",
+              "DfltOptnInd",
+              "PricVal",
+              "PricValCcy",
+              "ActnPrd"
+            ]
+          }
+        },
+        "BnfclOwnrDtls": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "OwnerSecurityID": {
+                "type": "string"
+              },
+              "CFTID": {
+                "type": "string"
+              },
+              "Acct": {
+                "type": "string"
+              },
+              "SubAcct": {
+                "type": "string"
+              },
+              "Bal": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "OwnerSecurityID",
+              "CFTID",
+              "Acct",
+              "SubAcct",
+              "Bal"
+            ]
+          }
+        }
+      },
+      "required": [
+        "CorporateActionIssuerID",
+        "CorporateActionType",
+        "CorpActnEvtId",
+        "EvtTp",
+        "MndtryVlntryEvtTp",
+        "RcrdDt",
+        "OrgNm",
+        "SfkpgAcct",
+        "FinInstrmId",
+        "AddtlInf",
+        "LwsInPlcCd",
+        "SbrdntLwsInPlcCd",
+        "CorpActnOptnDtls",
+        "BnfclOwnrDtls"
+      ]
+    }
+  },
+  "required": [
+    "CorporateActionNotification"
+  ]
+}
