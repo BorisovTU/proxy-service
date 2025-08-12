@@ -38,6 +38,12 @@
             <column name="status" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
+            <column name="instr_dt" type="TIMESTAMPTZ">
+                <constraints nullable="false"/>
+            </column>
+            <column name="instr_nmb" type="bigint">
+                <constraints nullable="false"/>
+            </column>
             <column name="create_date_time" type="TIMESTAMPTZ">
                 <constraints nullable="false"/>
             </column>

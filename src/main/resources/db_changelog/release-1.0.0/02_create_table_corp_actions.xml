@@ -38,6 +38,12 @@
         <column name="date_end" type="DATE">
             <constraints nullable="true"/>
         </column>
+        <column name="sfkpg_acct" type="varchar(25)" >
+            <constraints nullable="false"/>
+        </column>
+        <column name="org_nm" type="varchar(40)" >
+            <constraints nullable="false"/>
+        </column>
     </createTable>
 </changeSet>
 </databaseChangeLog>
